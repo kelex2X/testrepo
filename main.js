@@ -69,4 +69,4 @@ for (let i = 0; i < numberFourArray.length && contains == "hamis"; i++) {
     }
 }
 
-console.log("A tömbben megtalálható az 5: " + contains);
+console.log("A tömbben megtalálható az 5: " + contains); 
