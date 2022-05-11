@@ -1,11 +1,12 @@
-cars = ["Audi","BMW","Volvo"];
+let age = 9;
+let voteAge = 18;
 
-for (i=0; i < cars.length;i++) {
-    console.log(cars[i]);
-};
+//Hosszabban
+/*if (voteAge <= age) {
+    console.log('szavazhatsz!')
+} else (
+    console.log('nem szavazhatsz!')
+)*/
 
-let age = 37;
-
-age %= 9;
-
-console.log(age);
+//Rövidebben
+(voteAge <= age) ? console.log('szavazhatsz!'): console.log('nem szavazhatsz!') 
