@@ -70,3 +70,39 @@ for (let i = 0; i < numberFourArray.length && contains == "hamis"; i++) {
 }
 
 console.log("A tömbben megtalálható az 5: " + contains); 
+
+//OBJEKTUMOk
+let user = {
+    name : "John Doe",
+    age: 22,
+    city: "New York"
+}
+
+user = {
+    name : "piri",
+    age: 33,
+    city: "Washington"
+}
+
+const userNew = {
+    name : "John Doe",
+    age: 22,
+    city: "New York"
+}
+
+console.log(Object.keys(user));
+console.log(Object.values(user));
+console.log(Object.entries(user));
+console.log(Object.keys(user).length);
+//console.log(user.name = "Pista");
+console.log(user);
+console.log(userNew.name);
+console.log(userNew.name = "Béla báá");
+console.log(userNew);
+
+
+let number = [1,2,3,5,8,12,20];
+
+for (let k in number) {
+    console.log("kulcs: " + k + " érték: " + number[k]);
+}
