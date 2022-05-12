@@ -87,7 +87,10 @@ user = {
 const userNew = {
     name: "John Doe",
     age: 22,
-    city: "New York"
+    city: "New York",
+    writeInValue: function() {
+        console.log(this.name);
+    }
 }
 
 console.log(Object.keys(user));
@@ -135,3 +138,13 @@ for (const k of Object.values(weather)) {
 for (const k of Object.entries(weather)) {
     console.log(k);
 }
+
+userNew.name = "Józsi, bazd meg :)";
+userNew.writeInValue();
+console.log(userNew.name);
+
+userNew.writeData = function() {
+    console.log(`Ez e nevem: ${this.name} és ez a korom: ${this.age}`);
+}
+
+userNew.writeData();
