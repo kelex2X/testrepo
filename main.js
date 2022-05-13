@@ -171,5 +171,39 @@ function massModify(selector, attribute, value) {
     }
 }
 
-massModify("input", "placeholder", "Ide kellene írni valamit");
+//massModify("input", "placeholder", "Ide kellene írni valamit");
 
+//HTML elem létrehozása
+let helpText = document.createElement("small");
+helpText.className = "text-muted";
+helpText.innerHTML = "Helyes adja meg az email címet!";
+
+let parent = document.querySelector(".form-group:nth-child(2)");
+parent.appendChild(helpText);
+
+//Események
+let buttonBtn = document.querySelector('.btn');
+/*buttonBtn.onclick = function() {
+    console.log("Ez egy klikk esemény!");
+}*/
+
+buttonBtn.addEventListener('click', function(){
+    //myForm.reset();
+});
+
+//Űrlap elküldése
+let myForm = document.querySelector('#myForm');
+
+myForm.addEventListener("submit",function(ev){
+    ev.preventDefault();
+    console.log("Elküldve!");
+
+    let inputs = this.querySelectorAll("input");
+    let values= {};
+
+    for (let i = 0; i < inputs.length; i++) {
+        values[inputs[i].name] = inputs[i].value; 
+    }
+   
+    console.log(values);
+});

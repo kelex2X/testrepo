@@ -16,19 +16,18 @@
         <div class="row">
             <div class="col-4">
                 <h1>ez egy címsor</h1>
-                <form name="" method="" id="">
+                <form name="" method="" id="myForm">
                     <legend>ez egy űrlap</legend>
                     <fieldset>
-                        <label for="tesztInput1" class="form-label">ez egy label elem</label>
-                        <input type="text" class="form-control" id="tesztInput1">
-
-                        <label for="tesztInput2" class="form-label">ez egy label elem</label>
-                        <input type="text" class="form-control" id="tesztInput2">
-
-                        <label for="tesztInput3" class="form-label">ez egy label elem</label>
-                        <input type="text" class="form-control" id="tesztInput3">
-
-                        <button class="btn btn-primary mt-3 mb-3" type="button">ez egy gomb</button>
+                        <div class="mb-3 form-group">
+                            <label for="tesztInput1" class="form-label">Milyen feltét?</label>
+                            <input type="text" name="feltet" class="form-control" id="tesztInput1" value="">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="tesztInput2" class="form-label">Hány darab?</label>
+                            <input type="number" name="darabszam" class="form-control" id="tesztInput2" value="">
+                        </div>
+                        <button class="btn btn-primary mt-3 mb-3" type="submit">ez egy gomb</button>
                     </fieldset>
                 </form>
             </div>
