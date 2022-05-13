@@ -87,7 +87,7 @@ const userNew = {
     name: "John Doe",
     age: 22,
     city: "New York",
-    writeInValue: function() {
+    writeInValue: function () {
         console.log(this.name);
     }
 }
@@ -119,8 +119,8 @@ const userFuck = { name: 'Jim', age: 33 }
 console.log(`Hello, my name is ${userFuck.name} and I'm ${userFuck.age} age old.`);
 
 const weather = {
-    type: 'Rainy', 
-    uv: 'low' 
+    type: 'Rainy',
+    uv: 'low'
 };
 for (const k in weather) {
     console.log(`a kulcs neve: ${k} és értéke: ${weather[k]}`);
@@ -142,7 +142,7 @@ userNew.name = "Józsi, bazd meg :)";
 userNew.writeInValue();
 console.log(userNew.name);
 
-userNew.writeData = function() {
+userNew.writeData = function () {
     console.log(`Ez e nevem: ${this.name} és ez a korom: ${this.age}`);
 }
 
@@ -152,13 +152,13 @@ userNew.writeData();
 let tesztInputs = document.querySelectorAll("input[type='text']");
 
 //input elem példány CSS formázása
-Element.prototype.setBorder = function() {
+Element.prototype.setBorder = function () {
     this.style.border = "1px solid red";
     this.style.fontWeight = "700";
     this.classList.add('manipulált');
 };
 
-for (let i=0; i<tesztInputs.length; i++) {
+for (let i = 0; i < tesztInputs.length; i++) {
     tesztInputs[i].setBorder();
 }
 
@@ -167,7 +167,7 @@ function massModify(selector, attribute, value) {
     let nodeList = document.querySelectorAll(selector);
     for (let i = 0; i < nodeList.length; i++) {
         //nodeList[i][attribute] = value;  
-        nodeList[i].setAttribute(attribute, value);  
+        nodeList[i].setAttribute(attribute, value);
     }
 }
 
@@ -187,23 +187,87 @@ let buttonBtn = document.querySelector('.btn');
     console.log("Ez egy klikk esemény!");
 }*/
 
-buttonBtn.addEventListener('click', function(){
+buttonBtn.addEventListener('click', function () {
     //myForm.reset();
 });
 
 //Űrlap elküldése
 let myForm = document.querySelector('#myForm');
 
-myForm.addEventListener("submit",function(ev){
+myForm.addEventListener("submit", function (ev) {
     ev.preventDefault();
     console.log("Elküldve!");
-
+    
     let inputs = this.querySelectorAll("input");
-    let values= {};
-
+    let values = {};
+    
     for (let i = 0; i < inputs.length; i++) {
-        values[inputs[i].name] = inputs[i].value; 
+        values[inputs[i].name] = inputs[i].value;
     }
-   
-    console.log(values);
+    
+    let select = this.querySelector("#tesztInput1")
+    let selectValue = select.options.selectedIndex;
+
+    /*for (let i = 0; i < select.length; i++) {
+        selectValue = select[option[i]];
+    }*/
+    
+    console.log(selectValue);
+    console.log("Darab: " + Object.values(values));
+    //control.log(ev);
 });
+
+//Switch kapcsoló
+let d = new Date();
+let toDay = d.getDay();
+
+switch (toDay) {
+    case 1:
+        console.log("hétfő");
+        break;
+
+    case 5:
+        console.log("péntek");
+        break;
+    default:
+        break;
+}
+
+//Gyakorlás
+let Numerics = [1, 2, 3, 4, 5, 6, 7, 8]
+
+let NumericsObject = {
+    "name": "John Doe",
+    "age": 32,
+    "gender": "man"
+}
+
+for (let i in NumericsObject) {
+    //let xy = Object.keys(NumericsObject);
+    console.log(`Kulcs: ${i}, Érték: ${NumericsObject[i]}`);
+}
+
+let dataKeys = Object.keys(NumericsObject);
+console.log(dataKeys);
+
+//WHILE ciklus
+let feltetek = [
+    "szalonna",
+    "hagyma",
+    "tükörtojás",
+    "libamáj",
+    "extra sonka"
+];
+
+let toppingSelect = document.querySelector("#tesztInput1");
+let index = 0;
+
+while (index < feltetek.length) {
+    let option = document.createElement("option");
+    option.value = index;
+    option.innerHTML = feltetek[index];
+    toppingSelect.appendChild(option);
+    index++;
+}
+
+console.log(feltetek);
