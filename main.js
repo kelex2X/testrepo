@@ -1,4 +1,3 @@
-
 //Ternary operator
 let age = 9;
 let voteAge = 18;
@@ -148,3 +147,29 @@ userNew.writeData = function() {
 }
 
 userNew.writeData();
+
+//DOM
+let tesztInputs = document.querySelectorAll("input[type='text']");
+
+//input elem példány CSS formázása
+Element.prototype.setBorder = function() {
+    this.style.border = "1px solid red";
+    this.style.fontWeight = "700";
+    this.classList.add('manipulált');
+};
+
+for (let i=0; i<tesztInputs.length; i++) {
+    tesztInputs[i].setBorder();
+}
+
+//HTML elem attribútum módosítása
+function massModify(selector, attribute, value) {
+    let nodeList = document.querySelectorAll(selector);
+    for (let i = 0; i < nodeList.length; i++) {
+        //nodeList[i][attribute] = value;  
+        nodeList[i].setAttribute(attribute, value);  
+    }
+}
+
+massModify("input", "placeholder", "Ide kellene írni valamit");
+
